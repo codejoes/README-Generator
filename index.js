@@ -53,13 +53,13 @@ const questions = [
 const generateREADME = ({projectName, description, installation, usage, contributions, test, licenses, github, email}) => 
 
 `
-#${projectName}
+# ${projectName}
 
-##Description
+## Description
 
 ${description}
 
-##Table of Contents
+## Table of Contents
 
 1. [Installation](#installation)
 2. [Usage](#usage)
@@ -68,27 +68,27 @@ ${description}
 5. [Tests](#tests)
 6. [Questions](#questions)
 
-##Installation
+## Installation
 
 ${installation}
 
-##Usage
+## Usage
 
 ${usage}
 
-##License
+## License
 
 ${licenses}: For more information see the ${licenses} copyright in the repository.
 
-##Contributions
+## Contributions
 
 ${contributions}
 
-##Tests
+## Tests
 
 ${test}
 
-##Questions
+## Questions
 
 [My GitHub](https://github.com/${github})
 You may send any additional questions to [THIS](${email}) email!

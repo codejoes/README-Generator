@@ -78,7 +78,7 @@ ${usage}
 
 ##License
 
-${licenses}: For mor information see the ${licenses} copyright in the repository.
+${licenses}: For more information see the ${licenses} copyright in the repository.
 
 ##Contributions
 
@@ -91,7 +91,7 @@ ${test}
 ##Questions
 
 [My GitHub](https://github.com/${github})
-You may send any additional questions to [THIS](emailto:${email}) email!
+You may send any additional questions to [THIS](${email}) email!
 `;
 
 inquirer

@@ -37,4 +37,4 @@ N/A
 ## Questions
 
 [My GitHub](https://github.com/codejoes)
-You may send any additional questions to [THIS](emailto:josephscodes@gmail.com) email!
+You may send any additional questions to [THIS](josephscodes@gmail.com) email!

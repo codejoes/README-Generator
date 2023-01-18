@@ -36,7 +36,14 @@ const questions = [
         type: 'list',
         name: 'licenses',
         message: 'What license applies to your project?',
-        choices: ['Apache License 2.0', 'GNU General Public License v3.0', 'MIT License', 'BSD 2-Clause "Simplified" License', 'BSD 3-Clause "New" or "Revised" License', 'Boost Software License 1.0', 'Creative Commons Zero v1.0 Universal', 'None'],
+        choices: [{name: 'Apache License 2.0', value: ['Apache License 2.0', '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)']},
+          {name: 'GNU General Public License v3.0', value: ['GNU General Public License v3.0', '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)']},
+          {name: 'MIT License', value: ['MIT License', '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)']}, 
+          {name: 'BSD 2-Clause "Simplified" License', value: ['BSD 2-Clause "Simplified" License', '[![License](https://img.shields.io/badge/License-BSD_2--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)']},
+          {name: 'BSD 3-Clause "New" or "Revised" License', value: ['BSD 3-Clause "New" or "Revised" License', '[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)']},
+          {name: 'Boost Software License 1.0', value: ['Boost Software License 1.0', '[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)']}, 
+          {name: 'Creative Commons Zero v1.0 Universal', value: ['Creative Commons Zero v1.0 Universal', '[![License: CC0-1.0](https://licensebuttons.net/l/zero/1.0/80x15.png)](http://creativecommons.org/publicdomain/zero/1.0/)']}, 
+          {name: 'None', value: ['None', 'No License']}],
       },
       {
         type: 'input',
@@ -50,9 +57,11 @@ const questions = [
       },
 ];
 
+
 const generateREADME = ({projectName, description, installation, usage, contributions, test, licenses, github, email}) => 
 
-`
+`${licenses[1]}
+
 # ${projectName}
 
 ## Description
@@ -78,7 +87,7 @@ ${usage}
 
 ## License
 
-${licenses}: For more information see the ${licenses} copyright in the repository.
+${licenses[0]}: For more information see the ${licenses[0]} copyright in the repository.
 
 ## Contributions
 
@@ -91,17 +100,19 @@ ${test}
 ## Questions
 
 [My GitHub](https://github.com/${github})
-You may send any additional questions to [THIS](${email}) email!
+You may send any additional questions [here](${email})!
 `;
 
 inquirer
     .prompt([
         ...questions,
     ])
+    
     .then((answers) => {
+        console.log(answers.licenses);
         const readmePageContent = generateREADME(answers);
-
+    
         fs.writeFile('README.md', readmePageContent, (err) =>
-        err ? console.log(err) : console.log('Successfully created README.md!')
+        err ? console.log(err) : console.log('Successfully created README.md!') 
         );
     });

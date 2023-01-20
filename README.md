@@ -22,6 +22,7 @@ Simply fork and use. Run on inquirer v9.1.4.
 ## Usage
 
 Open the project in your preferred command line interface and then follow the user prompts to generate the README file.
+
 Video: [Click Here](https://drive.google.com/file/d/1hC_RRg1a3xKY9iziRot695ogjk3wPido/view?usp=share_link) to view a video demonstrating the project!
 
 ## License
